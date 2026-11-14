@@ -194,9 +194,18 @@ section:not(.alt) .t-item::before { background: var(--bg); box-shadow: 0 0 0 5px
 .col-title { font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; font-family: var(--sans); font-weight: 600; }
 
 /* research */
-.pubs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.pubs { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 18px; margin-bottom: 18px; }
+.pub { display: flex; flex-direction: column; }
+.pub .authors { font-size: .86rem; margin-bottom: 12px; }
+.pub .authors b { color: var(--text); font-weight: 700; }
+.pub-foot { margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: .74rem; color: var(--muted); word-break: break-all; }
+.pub ul { margin-bottom: 20px; }
+.pub-foot a { display: inline-flex; align-items: center; gap: 8px; color: var(--text); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.pub-foot a svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s; }
+.pub-foot a:hover { color: var(--accent); }
+.pub-foot a:hover svg { transform: translate(3px, -3px); }
 .pub .journal { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.pub h3 { font-size: clamp(1.45rem, 2.3vw, 1.9rem); margin: 14px 0 12px; }
+.pub h3 { font-size: clamp(1.3rem, 1.9vw, 1.55rem); margin: 14px 0 12px; }
 .pub p { color: var(--muted); font-size: .96rem; }
 .pub ul { margin-top: 16px; display: grid; gap: 8px; }
 .pub li { font-size: .9rem; color: var(--muted); padding-left: 22px; position: relative; }
@@ -352,7 +361,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .nav.open { transform: none; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
   .menu-btn { display: grid; }
-  .about-grid, .two-col, .pubs, .p-grid { grid-template-columns: 1fr; }
+  .about-grid, .two-col, .p-grid { grid-template-columns: 1fr; }
   .grid-3, .skills { grid-template-columns: 1fr 1fr; }
   .deck.feature { flex-direction: column; }
   .contact-cards { grid-template-columns: 1fr; }

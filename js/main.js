@@ -139,13 +139,13 @@
 
   /* ---------- reveal on scroll + counters ---------- */
   function countUp(el) {
-    var to = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0", 10), suf = el.dataset.suffix || "";
-    if (reduced) { el.textContent = to.toFixed(dec) + suf; return; }
+    var to = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0", 10), suf = el.dataset.suffix || "", pre = el.dataset.prefix || "";
+    if (reduced) { el.textContent = pre + to.toFixed(dec) + suf; return; }
     var t0 = null;
     requestAnimationFrame(function step(t) {
       if (!t0) t0 = t;
       var p = Math.min(1, (t - t0) / 1600), e = 1 - Math.pow(1 - p, 4);
-      el.textContent = (to * e).toFixed(dec) + suf;
+      el.textContent = pre + (to * e).toFixed(dec) + suf;
       if (p < 1) requestAnimationFrame(step);
     });
   }
@@ -225,4 +225,21 @@
       if (v && !running) { running = true; frame(); } else if (!v) running = false;
     }).observe(cv);
   }
+})();
+
+/* ---------- PDCA cycle ---------- */
+(function () {
+  var list = document.getElementById("pdcaList");
+  if (!list) return;
+  var items = list.querySelectorAll("li"), segs = document.querySelectorAll(".pdca .seg");
+  var name = document.getElementById("pdcaName"), step = document.getElementById("pdcaStep");
+  var names = ["Plan", "Do", "Check", "Act"], i = 0, timer;
+  function set(n) {
+    i = n % 4;
+    for (var k = 0; k < 4; k++) { items[k].classList.toggle("on", k === i); segs[k].classList.toggle("on", k === i); }
+    name.textContent = names[i]; step.textContent = "STEP " + (i + 1) + " OF 4";
+  }
+  function run() { clearInterval(timer); timer = setInterval(function () { set(i + 1); }, 2000); }
+  for (var k = 0; k < 4; k++) (function (k) { items[k].addEventListener("click", function () { set(k); run(); }); })(k);
+  set(0); run();
 })();

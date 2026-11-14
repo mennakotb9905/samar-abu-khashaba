@@ -407,19 +407,21 @@
       </article>
     </div>
     <article class="card fishbone reveal">
-      <div class="fb-top">
-        <div>
-          <span class="journal">Applied in practice · Cause-and-effect analysis</span>
-          <h3>The fishbone diagram</h3>
-        </div>
-        <p>Every plausible cause of a missed dose, grouped into four families. The team then scored and voted on them — and regression analysis confirmed the highlighted one as the root cause.</p>
+      <div class="fb-headrow">
+        <h3>The fishbone diagram, <i>applied three ways</i></h3>
+        <div class="filters fb-tabs" id="fbTabs"><button class="on" data-fb="safety">Patient safety</button><button data-fb="hplc">HPLC separation</button><button data-fb="students">Student retention</button></div>
       </div>
-      <div class="fb-scroll">
+      <div class="fb-panel on" data-fb="safety">
+        <div class="fb-top">
+          <span class="journal">Applied in practice · Healthcare quality</span>
+          <p>Every plausible cause of a missed dose, grouped into four families. The team then scored and voted on them — and regression analysis confirmed the highlighted one as the root cause.</p>
+        </div>
+        <div class="fb-scroll">
             <svg viewBox="0 0 1000 540" role="img" aria-label="Fishbone diagram of the causes of medication administration error">
             <path class="fb-line fb-spine" d="M40 270 H800" pathLength="1"/>
             <path class="fb-arrow" d="M800 270 l-16 -9 v18 z"/>
             <path class="fb-line" d="M230 50 L390 270" pathLength="1"/>
-            <g class="fb-cat"><rect x="155" y="16" width="150" height="34" rx="17"/><text x="230" y="38">Environment</text></g>
+            <g class="fb-cat"><rect x="149" y="16" width="161" height="34" rx="17"/><text x="230" y="38">Environment</text></g>
             <g class="fb-cause" style="--i:0"><path d="M248 79 h-26"/><text x="215" y="84">Noisy environment</text></g>
             <g class="fb-cause" style="--i:1"><path d="M277 119 h-26"/><text x="244" y="123">Poor lighting</text></g>
             <g class="fb-cause" style="--i:2"><path d="M306 158 h-26"/><text x="273" y="163">No control over the medication room</text></g>
@@ -447,10 +449,100 @@
             <g class="fb-cause" style="--i:18"><path d="M693 303 h-26"/><text x="660" y="308">Staff workload and fatigue</text></g>
             <g class="fb-head"><rect x="806" y="228" width="184" height="84" rx="14"/><text x="898" y="258">Medication</text><text x="898" y="278">administration error</text><text x="898" y="298" class="sub">MISSED DOSE</text></g>
             </svg>
+        </div>
+        <div class="fb-foot">
+          <small>Redrawn from the fishbone analysis in the comprehensive report (after Abd Rabou et al., 2017).</small>
+          <a class="mini-link" href="presentation.html?p=medication-error-report#slide=24">See it in the report <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
       </div>
-      <div class="fb-foot">
-        <small>Redrawn from the fishbone analysis in the comprehensive report (after Abd Rabou et al., 2017).</small>
-        <a class="mini-link" href="presentation.html?p=medication-error-report#slide=24">See it in the report <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <div class="fb-panel" data-fb="hplc">
+        <div class="fb-top">
+          <span class="journal">In the laboratory · Method troubleshooting</span>
+          <p>When two drugs refuse to separate, guessing wastes solvent and time. Mapping the causes first turns troubleshooting into a short, systematic checklist — and a greener one.</p>
+        </div>
+        <div class="fb-scroll">
+            <svg viewBox="0 0 1000 540" role="img" aria-label="Fishbone diagram of the causes of poor HPLC separation">
+            <path class="fb-line fb-spine" d="M40 270 H800" pathLength="1"/>
+            <path class="fb-arrow" d="M800 270 l-16 -9 v18 z"/>
+            <path class="fb-line" d="M230 50 L390 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="144" y="16" width="172" height="34" rx="17"/><text x="230" y="38">Mobile phase</text></g>
+            <g class="fb-cause" style="--i:0"><path d="M248 79 h-26"/><text x="215" y="84">Wrong organic-to-aqueous ratio</text></g>
+            <g class="fb-cause" style="--i:1"><path d="M277 119 h-26"/><text x="244" y="123">Unsuitable buffer pH</text></g>
+            <g class="fb-cause" style="--i:2"><path d="M306 158 h-26"/><text x="273" y="163">Low buffer capacity</text></g>
+            <g class="fb-cause" style="--i:3"><path d="M334 197 h-26"/><text x="301" y="202">Inadequate degassing</text></g>
+            <g class="fb-cause" style="--i:4"><path d="M363 237 h-26"/><text x="330" y="241">Poorly mixed or aged solvent</text></g>
+            <path class="fb-line" d="M560 50 L720 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="485" y="16" width="150" height="34" rx="17"/><text x="560" y="38">Column</text></g>
+            <g class="fb-cause" style="--i:5"><path d="M578 79 h-26"/><text x="545" y="84">Unsuitable stationary phase</text></g>
+            <g class="fb-cause" style="--i:6"><path d="M607 119 h-26"/><text x="574" y="123">Column ageing or contamination</text></g>
+            <g class="fb-cause" style="--i:7"><path d="M636 158 h-26"/><text x="603" y="163">Void or blocked inlet frit</text></g>
+            <g class="fb-cause" style="--i:8"><path d="M664 197 h-26"/><text x="631" y="202">Wrong length or particle size</text></g>
+            <g class="fb-cause" style="--i:9"><path d="M693 237 h-26"/><text x="660" y="241">Temperature not controlled</text></g>
+            <path class="fb-line" d="M230 490 L390 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="155" y="490" width="150" height="34" rx="17"/><text x="230" y="512">Instrument</text></g>
+            <g class="fb-cause" style="--i:10"><path d="M248 461 h-26"/><text x="215" y="465">Unstable pump flow</text></g>
+            <g class="fb-cause" style="--i:11"><path d="M277 421 h-26"/><text x="244" y="426">Leaking fittings</text></g>
+            <g class="fb-cause" style="--i:12"><path d="M306 382 h-26"/><text x="273" y="386">Air bubbles in the system</text></g>
+            <g class="fb-cause" style="--i:13"><path d="M334 343 h-26"/><text x="301" y="347">Excess extra-column volume</text></g>
+            <g class="fb-cause" style="--i:14"><path d="M363 303 h-26"/><text x="330" y="308">Detector wavelength not optimal</text></g>
+            <path class="fb-line" d="M560 490 L720 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="446" y="490" width="227" height="34" rx="17"/><text x="560" y="512">Sample and method</text></g>
+            <g class="fb-cause" style="--i:15"><path d="M578 461 h-26"/><text x="545" y="465">Column overload</text></g>
+            <g class="fb-cause" style="--i:16"><path d="M607 421 h-26"/><text x="574" y="426">Sample solvent too strong</text></g>
+            <g class="fb-cause" style="--i:17"><path d="M636 382 h-26"/><text x="603" y="386">Incomplete sample clean-up</text></g>
+            <g class="fb-cause" style="--i:18"><path d="M664 343 h-26"/><text x="631" y="347">Injection volume too large</text></g>
+            <g class="fb-cause" style="--i:19"><path d="M693 303 h-26"/><text x="660" y="308">Flow rate not optimised</text></g>
+            <g class="fb-head"><rect x="806" y="228" width="184" height="84" rx="14"/><text x="898" y="258">Poor chromatographic</text><text x="898" y="278">separation</text><text x="898" y="298" class="sub">LOW RESOLUTION · TAILING</text></g>
+            </svg>
+        </div>
+        <div class="fb-foot">
+          <small>An illustrative troubleshooting map for reversed-phase HPLC method development.</small>
+          <a class="mini-link" href="presentation.html?p=smart-green-hplc">See the HPLC lecture <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="fb-panel" data-fb="students">
+        <div class="fb-top">
+          <span class="journal">In the classroom · Academic quality</span>
+          <p>The same tool works on a lecture hall. Before changing how a course is taught, I map why students struggle or drop out — so every intervention targets a real cause.</p>
+        </div>
+        <div class="fb-scroll">
+            <svg viewBox="0 0 1000 540" role="img" aria-label="Fishbone diagram of the causes of low student retention">
+            <path class="fb-line fb-spine" d="M40 270 H800" pathLength="1"/>
+            <path class="fb-arrow" d="M800 270 l-16 -9 v18 z"/>
+            <path class="fb-line" d="M230 50 L390 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="155" y="16" width="150" height="34" rx="17"/><text x="230" y="38">Teaching</text></g>
+            <g class="fb-cause" style="--i:0"><path d="M248 79 h-26"/><text x="215" y="84">Passive, lecture-only delivery</text></g>
+            <g class="fb-cause" style="--i:1"><path d="M277 119 h-26"/><text x="244" y="123">Complex concepts not simplified</text></g>
+            <g class="fb-cause" style="--i:2"><path d="M306 158 h-26"/><text x="273" y="163">Few visual or interactive tools</text></g>
+            <g class="fb-cause" style="--i:3"><path d="M334 197 h-26"/><text x="301" y="202">Theory not linked to practice</text></g>
+            <g class="fb-cause" style="--i:4"><path d="M363 237 h-26"/><text x="330" y="241">Limited feedback to students</text></g>
+            <path class="fb-line" d="M560 50 L720 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="485" y="16" width="150" height="34" rx="17"/><text x="560" y="38">Assessment</text></g>
+            <g class="fb-cause" style="--i:5"><path d="M583 86 h-26"/><text x="550" y="90">Unclear marking criteria</text></g>
+            <g class="fb-cause" style="--i:6"><path d="M618 134 h-26"/><text x="585" y="138">Too few formative quizzes</text></g>
+            <g class="fb-cause" style="--i:7"><path d="M653 182 h-26"/><text x="620" y="186">Late feedback on results</text></g>
+            <g class="fb-cause" style="--i:8"><path d="M687 229 h-26"/><text x="654" y="234">Exams not aligned with teaching</text></g>
+            <path class="fb-line" d="M230 490 L390 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="155" y="490" width="150" height="34" rx="17"/><text x="230" y="512">Student</text></g>
+            <g class="fb-cause" style="--i:9"><path d="M248 461 h-26"/><text x="215" y="465">Weak prior knowledge</text></g>
+            <g class="fb-cause" style="--i:10"><path d="M277 421 h-26"/><text x="244" y="426">Poor study and time skills</text></g>
+            <g class="fb-cause" style="--i:11"><path d="M306 382 h-26"/><text x="273" y="386">Irregular attendance</text></g>
+            <g class="fb-cause" style="--i:12"><path d="M334 343 h-26"/><text x="301" y="347">Low motivation</text></g>
+            <g class="fb-cause" style="--i:13"><path d="M363 303 h-26"/><text x="330" y="308">Exam anxiety</text></g>
+            <path class="fb-line" d="M560 490 L720 270" pathLength="1"/>
+            <g class="fb-cat"><rect x="485" y="490" width="150" height="34" rx="17"/><text x="560" y="512">Support</text></g>
+            <g class="fb-cause" style="--i:14"><path d="M578 461 h-26"/><text x="545" y="465">Large class sizes</text></g>
+            <g class="fb-cause" style="--i:15"><path d="M607 421 h-26"/><text x="574" y="426">Limited laboratory time</text></g>
+            <g class="fb-cause" style="--i:16"><path d="M636 382 h-26"/><text x="603" y="386">Limited office hours</text></g>
+            <g class="fb-cause" style="--i:17"><path d="M664 343 h-26"/><text x="631" y="347">Little academic advising</text></g>
+            <g class="fb-cause" style="--i:18"><path d="M693 303 h-26"/><text x="660" y="308">No early-warning system</text></g>
+            <g class="fb-head"><rect x="806" y="228" width="184" height="84" rx="14"/><text x="898" y="258">Low student</text><text x="898" y="278">retention</text><text x="898" y="298" class="sub">FAILURE · DROP-OUT</text></g>
+            </svg>
+        </div>
+        <div class="fb-foot">
+          <small>An illustrative framework for improving student retention and success.</small>
+          <a class="mini-link" href="#presentations">See the teaching material <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
       </div>
     </article>
     <div class="dmaic reveal">

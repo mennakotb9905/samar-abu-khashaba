@@ -243,3 +243,15 @@
   for (var k = 0; k < 4; k++) (function (k) { items[k].addEventListener("click", function () { set(k); run(); }); })(k);
   set(0); run();
 })();
+
+/* ---------- fishbone tabs ---------- */
+(function () {
+  var tabs = document.getElementById("fbTabs");
+  if (!tabs) return;
+  tabs.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var id = b.dataset.fb;
+    Array.prototype.forEach.call(tabs.querySelectorAll("button"), function (x) { x.classList.toggle("on", x === b); });
+    Array.prototype.forEach.call(document.querySelectorAll(".fb-panel"), function (p) { p.classList.toggle("on", p.dataset.fb === id); });
+  });
+})();

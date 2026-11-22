@@ -497,3 +497,25 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* ---------- referees ---------- */
+.refs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ref { display: flex; flex-direction: column; }
+.ref-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.ref .seal, .ref-letter .seal { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--accent); display: grid; place-items: center; font-family: var(--serif); font-size: .95rem; color: var(--accent); letter-spacing: .04em; position: relative; }
+.ref .seal::after, .ref-letter .seal::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; border: 1px dashed var(--line-strong); animation: spin 22s linear infinite; }
+.ref h3 { font-size: clamp(1.35rem, 1.9vw, 1.6rem); margin-bottom: 8px; }
+.ref .org { font-size: .88rem; color: var(--muted); margin: 0 0 18px; }
+.ref ul { display: grid; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.ref li { font-size: .88rem; color: var(--muted); padding-left: 22px; position: relative; }
+.ref li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 1px; background: var(--accent); }
+.ref-rel { margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: .92rem; color: var(--text); }
+.ref-rel small { display: block; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.ref-letter { display: flex; align-items: center; gap: 22px; margin-top: 18px; }
+.ref-letter h3 { font-size: 1.4rem; margin-bottom: 6px; }
+.ref-letter p { font-size: .9rem; color: var(--muted); margin: 0; }
+.ref-letter > div { flex: 1; }
+.ref-note { margin-top: 22px; color: var(--muted); font-size: .9rem; text-align: center; }
+@media (max-width: 1020px) { .refs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .refs { grid-template-columns: 1fr; } .ref-letter { flex-direction: column; align-items: flex-start; } }
